@@ -1,14 +1,14 @@
 import Container from "../container/Container";
-import Navbar from "../navbar/Navbar";
+import Header from "../header/Header";
 
-interface Layout {
+interface ILayout {
   children: React.ReactNode;
 }
 
-function Layout({ children }: Layout) {
+function Layout({ children }: ILayout) {
   return (
     <>
-      <Navbar />
+      <Header />
       <Container>{children}</Container>
     </>
   );
