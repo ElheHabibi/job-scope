@@ -1,18 +1,17 @@
+import Container from "../container/Container";
 import Navbar from "../navbar/Navbar";
 
-interface Layout{
-    children: React.ReactNode;
+interface Layout {
+  children: React.ReactNode;
 }
 
-function Layout({children}: Layout) {
+function Layout({ children }: Layout) {
   return (
     <>
       <Navbar />
-      {children}
+      <Container>{children}</Container>
     </>
   );
 }
 
 export default Layout;
-
-
