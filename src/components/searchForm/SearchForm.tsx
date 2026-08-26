@@ -17,7 +17,7 @@ function SearchForm() {
           <input
             type="text"
             placeholder="search"
-            className="w-full text-sm text-text-primary outline-none placeholder:text-text-secondary"
+            className="w-full text-sm text-text-primary outline-none placeholder:text-secondary"
           />
         </div>
 
