@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function JobListItem() {
   const [isSaveActive, setIsSaveActive] = useState(false);
   return (
 <li className="nth-[n+6]:hidden">    
-      <a
-        href="."
+      <Link to="/Home/jobs/job-content"
         className="flex justify-between items-center p-4 border-b border-border"
       >
         <div className="flex items-center px-4 py-2 min-w-0 flex-1">
@@ -54,7 +54,7 @@ function JobListItem() {
 
           <time className="text-xs font-medium">2d</time>
         </div>
-      </a>
+      </Link>
     </li>
   );
 }
