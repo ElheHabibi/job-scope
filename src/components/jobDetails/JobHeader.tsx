@@ -1,4 +1,6 @@
-const JobHeader = () => {
+import SaveButton from "../saveButton/SaveButton";
+
+function JobHeader() {
   return (
     <section className="rounded-2xl border border-border p-6 sm:p-8">
       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -22,12 +24,13 @@ const JobHeader = () => {
               <span>Remote</span>
             </div>
 
-            <p className="mt-2 text-sm text-muted">
-              Posted 2 hours ago
-            </p>
+            <p className="mt-2 text-sm text-muted">Posted 2 hours ago</p>
 
             <div className="mt-4 flex flex-wrap gap-2">
-              <span>skills  skills skills skills skills skills skills skills skills skills skills skills skills skills skills</span>
+              <span>
+                skills skills skills skills skills skills skills skills skills
+                skills skills skills skills skills skills
+              </span>
             </div>
           </div>
         </div>
@@ -41,15 +44,18 @@ const JobHeader = () => {
           </button>
 
           <button
-            type="button"
-            className="rounded-lg border border-border px-5 py-3 text-sm font-medium text-secondary transition-colors hover:text-primary"
+            className="flex gap-4 rounded-lg border border-border px-5 py-3 text-sm font-medium text-secondary transition-colors hover:text-primary"
           >
-            Save Job
+
+                <div className="ml-3">
+                  <SaveButton />
+                </div>
+                <span>Save Job</span>
           </button>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default JobHeader;
