@@ -1,3 +1,4 @@
+import ButtonComponent from "../button/ButtonComponent";
 import SaveButton from "../saveButton/SaveButton";
 
 function JobHeader() {
@@ -36,22 +37,12 @@ function JobHeader() {
         </div>
 
         <div className="flex w-full flex-col gap-3 md:w-44">
-          <button
-            type="button"
-            className="rounded-lg bg-primary px-5 py-3 text-sm text-white font-meduim transition-colors hover:bg-primary-hover"
-          >
-            Apply Now
-          </button>
+          <ButtonComponent variant="primary">Apply Now</ButtonComponent>
 
-          <button
-            className="flex gap-4 rounded-lg border border-border px-5 py-3 text-sm font-medium text-secondary transition-colors hover:text-primary"
-          >
-
-                <div className="ml-3">
-                  <SaveButton />
-                </div>
-                <span>Save Job</span>
-          </button>
+          <div className="flex items-center gap-4 rounded-lg border border-border px-5 py-3 text-sm font-medium text-secondary transition-colors hover:text-primary">
+            <SaveButton />
+            <span>Save Job</span>
+          </div>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import Container from "../container/Container";
 import Theme from "../theme/Theme";
 import MobileMenuButton from "../mobileMenu/MobileMenuButton";
 import Navbar from "../navbar/Navbar";
+import ButtonComponent from "../button/ButtonComponent";
 
 function Header() {
   return (
@@ -23,12 +24,7 @@ function Header() {
 
           <div className="flex items-center gap-4">
             <Theme />
-            <button
-              type="button"
-              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
-            >
-              Sign in
-            </button>
+            <ButtonComponent variant="primary">Sign in</ButtonComponent>
             <MobileMenuButton />
           </div>
         </div>

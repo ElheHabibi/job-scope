@@ -1,3 +1,4 @@
+import ButtonComponent from "../button/ButtonComponent";
 import Container from "../container/Container";
 
 function SearchForm() {
@@ -21,12 +22,9 @@ function SearchForm() {
           />
         </div>
 
-        <button
-          type="submit"
-          className="rounded-r-lg bg-primary px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover"
-        >
+        <ButtonComponent type="submit" variant="search">
           Search
-        </button>
+        </ButtonComponent>
       </form>
     </Container>
   );
