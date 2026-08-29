@@ -1,16 +1,41 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="bg-blue-300 flex justify-around">
-      <Link to="/">
-        <span>home</span>
-      </Link>
+    <>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive
+            ? "py-7 text-sm font-medium border-b-2 text-primary hover:border-primary"
+            : " py-7 text-sm font-medium text-secondary hover:text-primary"
+        }
+      >
+        Jobs
+      </NavLink>
 
-      <Link to="/bookmarks">
-        <span>bookmarks</span>
-      </Link>
-    </div>
+      <NavLink
+        to="/saved-jobs"
+        className={({ isActive }) =>
+          isActive
+            ? "py-7 text-sm font-medium border-b-2 text-primary hover:border-primary"
+            : " py-7 text-sm font-medium text-secondary hover:text-primary"
+        }
+      >
+        Saved Jobs
+      </NavLink>
+
+      <NavLink
+        to="/about"
+        className={({ isActive }) =>
+          isActive
+            ? "py-7 text-sm font-medium border-b-2 text-primary hover:border-primary"
+            : " py-7 text-sm font-medium text-secondary hover:text-primary"
+        }
+      >
+        About
+      </NavLink>
+    </>
   );
 }
 

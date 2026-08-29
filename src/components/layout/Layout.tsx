@@ -1,18 +1,17 @@
-import Navbar from "../navbar/Navbar";
+import Container from "../container/Container";
+import Header from "../header/Header";
 
-interface Layout{
-    children: React.ReactNode;
+interface ILayout {
+  children: React.ReactNode;
 }
 
-function Layout({children}: Layout) {
+function Layout({ children }: ILayout) {
   return (
     <>
-      <Navbar />
-      {children}
+      <Header />
+      <Container>{children}</Container>
     </>
   );
 }
 
 export default Layout;
-
-
