@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/saved-jobs" element={<SavedJobs />} />
           <Route path="/about" element={<About />} />
-          <Route path="/Home/jobs/job-content" element={<JobDetails />}/>
+          <Route path="/jobs/job-details" element={<JobDetails />}/>
         </Routes>
       </Layout>
     </BrowserRouter>

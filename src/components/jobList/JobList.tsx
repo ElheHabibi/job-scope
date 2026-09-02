@@ -4,7 +4,7 @@ import JobListItem from "../jobListItem/JobListItem"
 function JobList() {
   return (
     <ul>
-      <Link to='/jobs/details'>
+      <Link to='/jobs/job-details'>
       <JobListItem />
       </Link>
       <Link to='/jobs/details'>

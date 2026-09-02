@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import image from "../../assets/job-scope-logo.webp";
+import image from "../../assets/logo-job.webp";
 import Container from "../container/Container";
 import Theme from "../theme/Theme";
 import MobileMenuButton from "../mobileMenu/MobileMenuButton";
