@@ -1,7 +1,12 @@
 import ButtonComponent from "../button/ButtonComponent";
 import Container from "../container/Container";
 
-function SearchForm({searchText, setSearchText}) {
+type TSearchFormProps = {
+  searchText: string;
+  setSearchText: React.Dispatch<React.SetStateAction<string>>;
+};
+
+function SearchForm({ searchText, setSearchText }: TSearchFormProps) {
   return (
     <Container>
       <form
