@@ -1,19 +1,7 @@
-import { useEffect, useState } from "react";
 import ButtonComponent from "../button/ButtonComponent";
 import Container from "../container/Container";
-import { fetchJobs } from "../../services/api";
 
-function SearchForm() {
-  const [searchText, setSearchText] = useState("");
-
-  useEffect(() => {
-    if (!searchText) return;
-
-    fetchJobs().then((res) => {
-      console.log(res.data.data);
-    });
-  }, [searchText]);
-
+function SearchForm({searchText, setSearchText}) {
   return (
     <Container>
       <form

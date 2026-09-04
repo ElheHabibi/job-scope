@@ -1,29 +1,18 @@
-import { Link } from "react-router-dom"
-import JobListItem from "../jobListItem/JobListItem"
+import { Link } from "react-router-dom";
+import JobListItem from "../jobListItem/JobListItem";
 
-function JobList() {
+function JobList({ jobItems }) {
   return (
     <ul>
-      <Link to='/jobs/job-details'>
-      <JobListItem />
-      </Link>
-      <Link to='/jobs/details'>
-      <JobListItem />
-      </Link>
-      <Link to='/jobs/details'>
-      <JobListItem />
-      </Link>
-      <Link to='/jobs/details'>
-      <JobListItem />
-      </Link>
-      <Link to='/jobs/details'>
-      <JobListItem />
-      </Link>
-      <Link to='/jobs/details'>
-      <JobListItem />
-      </Link>
+      {jobItems.map((job) => {
+        return(
+        <Link to="/jobs/job-details" key={job.slug}>
+          <JobListItem job={job} />
+        </Link>
+        )
+      })}
     </ul>
-  )
+  );
 }
 
-export default JobList
+export default JobList;
