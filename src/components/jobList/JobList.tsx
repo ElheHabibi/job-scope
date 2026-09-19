@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import JobListItem from "../jobListItem/JobListItem";
-import type { IJobs } from "../../types/servers";
+import type { IJobs } from "../../lib/types";
 
 type TJobListProps = {
   jobItems: IJobs[];
@@ -9,13 +9,11 @@ type TJobListProps = {
 function JobList({ jobItems }: TJobListProps) {
   return (
     <ul>
-      {jobItems.map((job: IJobs) => {
-        return (
-          <Link to="/jobs/job-details" key={job.slug}>
-            <JobListItem {...job} />
-          </Link>
-        );
-      })}
+      {jobItems.map((job: IJobs) => (
+        <Link to={`/jobs/job-details`} key={job.slug}>
+          <JobListItem {...job} />
+        </Link>
+      ))}
     </ul>
   );
 }

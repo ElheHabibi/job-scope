@@ -1,30 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import JobList from "../../components/jobList/JobList";
 import PaginationControls from "../../components/paginationControls/PaginationControls";
 import ResultCounter from "../../components/resultcounter/ResultCounter";
 import SearchForm from "../../components/searchForm/SearchForm";
 import SortingControls from "../../components/sortingControls/SortingControls";
-import { fetchJobs } from "../../services/api";
-import type { IJobs } from "../../types/servers";
+import { useJobItems } from "../../lib/Hooks";
 
 function Home() {
   const [searchText, setSearchText] = useState("");
-  const [jobItems, setJobItems] = useState<IJobs[]>([]);
-
-  useEffect(() => {
-    if (!searchText) return;
-
-    fetchJobs().then((res) => {
-      const filtered = res.data.data.filter(
-        (job: IJobs) =>
-          job.title.toLowerCase().includes(searchText.toLowerCase()) ||
-          job.tags.some((tag) =>
-            tag.toLowerCase().includes(searchText.toLowerCase()),
-          ),
-      );
-      setJobItems(filtered);
-    });
-  }, [searchText]);
+  const JobItemsSliced = useJobItems(searchText)
 
   return (
     <div className="min-h-screen">
@@ -34,7 +18,7 @@ function Home() {
           <ResultCounter />
           <SortingControls />
         </div>
-        <JobList jobItems={jobItems} />
+        <JobList jobItems={JobItemsSliced} />
         <PaginationControls />
       </main>
     </div>

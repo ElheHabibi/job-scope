@@ -1,5 +1,5 @@
 import SaveButton from "../saveButton/SaveButton";
-import type { IJobs } from "../../types/servers";
+import type { IJobs } from "../../lib/types";
 
 type TJobListItem = IJobs;
 
@@ -14,7 +14,7 @@ function JobListItem({ company_name, title, remote }: TJobListItem) {
   }
 
   return (
-    <li className="nth-[n+6]:hidden flex justify-between items-center p-4 border-b border-border">
+    <li className="flex justify-between items-center p-4 border-b border-border">
       <div className="flex items-center px-4 py-2 min-w-0 flex-1">
         <div className="bg-muted rounded h-12 w-12 font-bold flex justify-center text-center items-center">
           {getCompanyInitials(company_name)}
